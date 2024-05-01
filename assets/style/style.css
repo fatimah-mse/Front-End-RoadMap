@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form-check-input {
+    width: 50px !important;
+    height: 25px !important;
+    cursor: pointer;
+}
+main {
+    background-color: lightgreen;
+    min-height: 100vh;
+}
+.numder{
+    font-size: 12rem;
+    opacity: 0.3;
+}
+h3 {
+    color: #42d309;
+}
+.play {
+    color: #398b18;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+.play:hover {
+    color: lightgreen;
+}
+.to-top {
+    position: fixed;
+    display: flex;
+    font-size: 20px;
+    padding: 10px 12px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    bottom: 15px;
+    right: -40px;
+    z-index: 1;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.to-top.show{
+    right: 15px;
+}
