@@ -6,18 +6,32 @@ function play(obj) {
     var audio = obj.nextElementSibling
     
     if (audio.paused) {
-        obj.className = 'play fa-solid fa-circle-pause fa-2xl mt-3 mb-2'
+        stop()
+        obj.classList.remove('fa-circle-play')
+        obj.classList.add('fa-circle-pause')
         audio.play()
         
     }
     else {
-        obj.className = 'play fa-solid fa-circle-play fa-2xl mt-3 mb-2'
+        obj.classList.remove('fa-circle-pause');
+        obj.classList.add('fa-circle-play');
         audio.pause()
     }
     audio.addEventListener('ended', function() {
-        obj.className = 'play fa-solid fa-circle-play fa-2xl mt-3 mb-2'
+        obj.classList.remove('fa-circle-pause')
+        obj.classList.add('fa-circle-play')
     })
+}
 
+function stop() {
+    var audioElements = document.querySelectorAll('audio')
+
+    for (var i = 0; i < audioElements.length; i++) {
+        audioElements[i].pause()
+        var playButton = audioElements[i].previousElementSibling
+        playButton.classList.remove('fa-circle-pause')
+        playButton.classList.add('fa-circle-play')
+    }
 }
 
 window.onscroll = function () {
